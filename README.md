@@ -1,5 +1,6 @@
 # proyecto_retail_ventas_pronostico_inventario
-EDA y modelado de ventas (base vs enriquecido) con métricas WAPE/sMAPE/MASE y visualizaciones en CLP. Traducción a inventario: EOQ (Q*), Stock de Seguridad, ROP y gobierno de Lead Time. Incluye cierre metodológico, KPIs y cadencia S&amp;OP.
+EDA y modelado de ventas (base vs enriquecido) con métricas WAPE/sMAPE/MASE y visualizaciones en CLP. Traducción a inventario: EOQ (Q*), Stock de Seguridad, ROP y gobierno de Lead Time. Incluye cierre metodológico, KPIs y cadencia S&OP.
+
 # Ejemplo de Análisis Exploratorio de Datos 
 
 ## Análisis de Ventas, Predicción e Inventario (Retail | CLP)
@@ -48,78 +49,78 @@ El comportamiento de la demanda en retail está guiado por **estacionalidad**, e
 ---
 
 ## Visualizaciones y su Interpretación
-> Mueve/renombra imágenes a `docs/img/` para que se vean en GitHub. Los nombres son ejemplos; usa los tuyos si ya existen.
+> Sube **tus imágenes** a `docs/img/` con **estos nombres exactos** (los que me enviaste). Las rutas ya están listas.
 
 ### Estacionalidad
 1. **Semanal (líneas, 2023–2024)**  
-   ![Ventas por semana](docs/img/ventas_semanas_2023_2024_lineas.png)  
+   ![Ventas por semana](<docs/img/Análisis Estacional de Ventas por Semana Año 2023-2024(líneas).png>)  
    **Insight:** curvas casi paralelas; estacionalidad estable con picos puntuales.  
 2. **Semanal (barras, 2023–2024)**  
-   ![Ventas semanales barras](docs/img/ventas_semanales_barras_2023_2024.png)  
+   ![Ventas semanales barras](<docs/img/Ánalisis Estacional de Ventas Semanales Año 2023-2024.png>)  
    **Insight:** jueves y fin de semana levemente superiores; patrón intra-semana predecible.  
 3. **Diaria (líneas, 2023–2024)**  
-   ![Ventas diarias](docs/img/ventas_diarias_2023_2024_lineas.png)  
+   ![Ventas diarias](<docs/img/Análisis Estacional Diario de Ventas Año 2023-2024(líneas).png>)  
    **Insight:** ruido diario; conviene agregar a semana/mes para decisiones.  
 4. **Diaria con outliers + eventos**  
-   ![Outliers y eventos](docs/img/ventas_diarias_outliers_2023_2024.png)  
+   ![Outliers y eventos](<docs/img/Comparación Estacional de Ventas con outliers Diarias entre 2023-2024.png>)  
    **Insight:** Black Friday y Navidad concentran picos → **elevar SS y ROP** en ventanas de evento.  
 5. **Mensual (barras)**  
-   ![Estacionalidad mensual](docs/img/estacionalidad_mensual_barras_2023_2024.png)  
+   ![Estacionalidad mensual](<docs/img/Estacionalidad por mes Año 2023-2024 (Barras).png>)  
    **Insight:** máximos claros en **septiembre** y **diciembre**; planificar **stock build** previo.  
 6. **Fechas con mayor estacionalidad**  
-   ![Fechas clave](docs/img/fechas_mayor_estacionalidad.png)  
+   ![Fechas clave](<docs/img/Fechas con mayor estacionalidad.png>)  
    **Insight:** días específicos explican gran parte del ingreso; gatillos para buffers logísticos.
 
 ### Mix y pagos
-7. **Promedio por categoría (2023–2024)**  
-   ![Promedio por categoría](docs/img/promedio_por_categoria_2023_2024.png)  
+7. **Promedio por categoría (2024)**  
+   ![Promedio por categoría](<docs/img/Promedio por Categoría Año 2024-2024(barras).png>)  
    **Insight:** **Hogar/Oficina** lideran; **Electrónica/Juguetería** rezagadas.  
 8. **Promedios por método de pago (2023–2024)**  
-   ![Promedio por pago](docs/img/promedio_por_metodo_pago_2023_2024.png)  
+   ![Promedio por pago](<docs/img/Promedio por metodo de pago año 2023-2024.png>)  
    **Insight:** diferencias marginales; **App** apenas mayor.  
 9. **Total de ingresos por método de pago (2023–2024)**  
-   ![Total por pago](docs/img/total_ingresos_por_metodo_pago_2023_2024.png)  
+   ![Total por pago](<docs/img/Total de Ingresos por Método de Pago Años 2023-2024 con variables elegidas.png>)  
    **Insight:** cartera de pagos diversificada; riesgo operativo bajo por canal.  
 10. **Distribución $ por categoría×método de pago**  
-    ![Distribución cat×pago](docs/img/distribucion_categoria_metodopago_2023_2024.png)  
+    ![Distribución cat×pago](<docs/img/Distribución $ de Categoría por Método de Pago Año 2023-2024.png>)  
     **Insight:** los métodos no reconfiguran sustancialmente el mix por categoría.  
 11. **Distribución de frecuencia de compra**  
-    ![Frecuencia compra](docs/img/distribucion_frecuencia_compra_2023_2024.png)  
+    ![Frecuencia compra](<docs/img/Distribución de Frecuencia de Compra Año 2023-2024.png>)  
     **Insight:** base de clientes con repetición suficiente para planificar por mes.  
 12. **Participación por categoría**  
-    ![Participación](docs/img/participacion_categoria_producto_2023_2024.png)  
+    ![Participación](<docs/img/Participación % por Categoría de Producto Año 2023-2024.png>)  
     **Insight:** **Oficina/Hogar** concentran el share → asignar capacidad proporcional.
 
 ### Correlaciones
-13. **Precio–Cantidad–Ingreso (2023–2024)**  
-    ![Correlación PCI](docs/img/correlacion_precio_cantidad_ingreso_2023_2024.png)  
+13. **Precio–Cantidad–Ingreso (2023–2024) — combinación 1**  
+    ![Mapa correlación 1](<docs/img/Mapa de correlación Año 2023-2024(primera combinación).png>)  
+14. **Precio–Cantidad–Ingreso (2023–2024) — combinación 2**  
+    ![Mapa correlación 2](<docs/img/Segunda Combinación mapa de correlación.png>)  
     **Insight:** Ingreso depende fuertemente de **Precio** y moderadamente de **Cantidad**.
 
 ### Real vs. Predicho (modelos)
-14. **Por categoría — Base (2023–2024)**  
-    ![Base 23-24](docs/img/real_vs_predicho_categoria_base_2023_2024.png)  
+15. **Por categoría — Base (2023–2024)**  
+    ![Base 23-24](<docs/img/Ingreso Real vs Predicho(base) enriqueido 2023-2024.png>)  
     **Insight:** captura estacionalidad; errores en cambios bruscos.  
-15. **Por categoría — Enriquecido (2023–2024)**  
-    ![Enriquecido 23-24](docs/img/real_vs_predicho_categoria_enriquecido_2023_2024.png)  
+16. **Por categoría — Enriquecido (2023–2024)**  
+    ![Enriquecido 23-24](<docs/img/Ingreso Real vs Predicho(Enriquecido) por categoría 2023_2024.png>)  
     **Insight:** menor gap gracias a señales de negocio.  
-16. **Por categoría — Base (2025)**  
-    ![Base 2025](docs/img/real_vs_predicho_categoria_base_2025.png)  
-    **Insight:** ligera **sub-predicción** en Hogar/Oficina; vigilancia en Moda/Electrónica.  
-17. **Por categoría — Mensual, Enriquecido (2025)**  
-    ![Mensual 2025](docs/img/real_vs_predicho_categoria_mensual_enriquecido_2025.png)  
-    **Insight:** generaliza bien fuera de muestra; picos de sep/dic bien capturados.  
-18. **Lollipop por método de pago — Base**  
-    ![Lollipop Base](docs/img/lollipop_real_vs_predicho_base_metodo_pago_2023_2024.png)  
-    **Insight:** buen tracking por vía de pago.  
-19. **Lollipop por método de pago — Enriquecido**  
-    ![Lollipop Enriq.](docs/img/lollipop_real_vs_predicho_enriquecido_metodo_pago_2023_2024.png)  
+17. **Por método de pago — Lollipop Base (2023–2024)**  
+    ![Lollipop Base](<docs/img/Lolliop Ingreso Real vs Predicho(Base) por Método de Pago 2023-2024.png>)  
+18. **Por método de pago — Lollipop Enriquecido (2023–2024)**  
+    ![Lollipop Enriquecido](<docs/img/Lollipop Ingreso Real vs Predicho(Enirquecido) por Método de peago.png>)  
     **Insight:** el enriquecido reduce diferencias residuales.  
-20. **Importancia de variables — Base**  
-    ![FI Base](docs/img/importancia_variables_modelo_base.png)  
-    **Insight:** `Día del Año` domina → **calendario-centrismo**.  
-21. **Importancia de variables — Enriquecido**  
-    ![FI Enriq.](docs/img/importancia_variables_modelo_enriquecido.png)  
-    **Insight:** señales (premium/descuentos/estacional) aportan explicabilidad adicional.
+19. **Importancia de variables — Base**  
+    ![FI Base](<docs/img/Importancia de Variables modelo forest base.png>)  
+20. **Importancia de variables — Enriquecido**  
+    ![FI Enriq.](<docs/img/Importancia de Variables modelo eriquecido.png>)  
+    **Insight:** `Día del Año` domina; el enriquecido suma señales operativas.  
+21. **Por categoría — Base (2025)**  
+    ![Base 2025](<docs/img/Ingreso Real vs Predicho(Base) por categoría 2025.png>)  
+22. **Por categoría — (Mensual) Enriquecido 2025**  
+    ![Mensual 2025 enr.](<docs/img/Ingerso Real vs Predicho enriquecido por Categoría (Mensual) 2025.png>)  
+23. **Por categoría — (Mensual) Real vs Predicha 2025**  
+    ![Mensual 2025 real/pred](<docs/img/Cantidad Real vs Predicha por Categoría (Mneusal) 2025.png>)  
 
 ---
 
@@ -143,26 +144,15 @@ El comportamiento de la demanda en retail está guiado por **estacionalidad**, e
 ---
 
 ## ¿Cómo ver Q*, Stock de Seguridad (SS), ROP y Lead Times?
+- **Se visualizan en VS Code/Jupyter** ejecutando `codigo_principal.py` o `C_Principal.py`.  
+- Si tus funciones guardan archivos, usa estas carpetas sugeridas (puedes crearlas):  
+  - PNG **inventario** → `docs/img/inventario/`  
+  - CSV **inventario** → `outputs/inventario/`
 
-### A) Si ya tienes las imágenes exportadas
-Inclúyelas en `docs/img/` y se verán en GitHub (no necesitas VS Code para ver PNG en el README):
-
-![Q Óptimo (EOQ)](docs/img/eoq_heatmap.png)  
-![Stock de Seguridad](docs/img/ss_heatmap.png)  
-![Punto de Reorden (ROP)](docs/img/rop_heatmap.png)  
-![Lead Times](docs/img/leadtime_heatmap.png)
-
-### B) Si quieres **generarlas** localmente (opcional)
-Ejecuta el flujo en tu equipo para abrir las ventanas de Matplotlib o guardar a disco:
-```bash
-python src/codigo_principal.py
-# o
-python src/C_Principal.py
-```
-- Si tus funciones guardan archivos, revisa la carpeta de salida (ej.: `docs/img/` o `outputs/`).
+> Si aún no guardas automáticamente, igual verás los gráficos en pantalla (VS Code). Para mostrarlos en el README, súbelos luego a `docs/img/inventario/` y enlázalos.
 
 ### Lectura rápida (inventario)
-- **Q*** sube en meses pico (sep/dic) → lotes más grandes y capacidad de recepción preparada.  
+- **Q\*** sube en meses pico (sep/dic) → lotes más grandes y capacidad de recepción preparada.  
 - **SS** crece con la volatilidad de demanda (σ_d) y del **Lead Time** (σ_LT) → servicio por segmento (A alto, B/C moderado) y +1 escalón en eventos.  
 - **ROP** se mueve con μ_LT y demanda esperada → **ajuste mensual** con el perfil del modelo.  
 - **Lead Time:** controla **P90/P95** por CD×ciudad; **reducir varianza logística** baja SS sin perder servicio.
@@ -283,7 +273,7 @@ python src/C_Principal.py
 ---
 
 ## Herramientas Usadas
-Python 3.x · pandas · numpy · matplotlib · seaborn · scikit-learn · openpyxl · *(plotly opcional)*.
+Python 3.x · pandas · numpy · matplotlib · seaborn · scikit-learn · openpyxl.
 
 ---
 
@@ -299,19 +289,7 @@ Arquitectura modular: `codigo_principal.py` orquesta funciones de `Funciones.py`
 
 ## Ejecución del Proyecto
 ```bash
-# Instalar dependencias (ejemplo)
-pip install -r requirements.txt
-
-# Ejecutar flujo principal
-python src/codigo_principal.py
+# Ejecutar flujo principal (VS Code / terminal)
+python codigo_principal.py
 # (o)
-python src/C_Principal.py
-```
-
----
-
-## Mis datos
-Proyecto para portafolio profesional en ciencia de datos aplicada a retail.  
-
-- 📬 lorenzoschiappacase@gmail.com  
-- 📎 https://www.linkedin.com/in/lorenzo-brunod-schiappacase-9a10191b9
+python C_Principal.py
