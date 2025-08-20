@@ -133,7 +133,7 @@ Los scripts:
     ![Frecuencia compra](<docs/img/Distribución de Frecuencia de Compra Año 2023-2024.png>)  
     **Insight:** base de clientes con repetición suficiente para planificar por mes.  
 12. **Participación por categoría**  
-    ![Participación](<docs/img/Participación % por Categoría de Producto Año 2023-2024.png>)  
+    ![Participación](docs/img/Participaci%C3%B3n%20%25%20por%20Categor%C3%ADa%20de%20Producto%20A%C3%B1o%202023-2024.png) 
     **Insight:** **Oficina/Hogar** concentran el share → asignar capacidad proporcional.
 
 ### Correlaciones
