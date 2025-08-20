@@ -304,7 +304,7 @@ Los scripts:
 - **Regla:** *challenger* reemplaza si mejora WAPE ≥ **1.5 p.p.** sin empeorar Bias ni cobertura.
 
 ### 10) Gobernanza y checklists
-- **Paquete mensual:** pronósticos P50/P90, métrricas por fold, tablas Q*/ROP/SS, KPIs, LT, acta S&OP.  
+- **Paquete mensual:** pronósticos P50/P90, métricas por fold, tablas Q*/ROP/SS, KPIs, LT, acta S&OP.  
 - **Checklist antes de publicar:** data freeze ✓, backtesting ✓, KPIs ✓, Q*/ROP/SS ✓, LT vs SLA ✓, acta ✓.
 
 ---
