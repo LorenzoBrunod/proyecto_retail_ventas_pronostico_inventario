@@ -163,7 +163,7 @@ Los scripts:
 21. **Por categoría — Base (2025)**  
     ![Base 2025](<docs/img/Ingreso Real vs Predicho(Base) por categoría 2025.png>)  
 22. **Por categoría — (Mensual) Enriquecido 2025**  
-    ![Mensual 2025 enr.](docs/img/Ingerso%20Real%20vs%20Predicho%20enriquecido%20por%20Categor%C3%ADa%20(Mneusal)%202025.png)  
+    ![Mensual 2025 enr.](docs/img/Ingerso%20Real%20vs%20Predicho%20enriquecido%20por%20Categor%C3%ADa%20%28Mneusal%29%202025.png)  
 23. **Por categoría — (Mensual) Real vs Predicha 2025**  
     ![Mensual 2025 real/pred](<docs/img/Cantidad Real vs Predicha por Categoría (Mneusal) 2025.png>)  
 
