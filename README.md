@@ -19,6 +19,51 @@ El comportamiento de la demanda en retail está guiado por **estacionalidad**, e
 
 ---
 
+## Requisitos
+```bash
+python >= 3.9
+pip install pandas numpy matplotlib seaborn scikit-learn scipy openpyxl
+```
+
+---
+
+## Estructura del repositorio (código en carpetas)
+```
+.
+├─ README.md
+├─ Base_Empresa_BigData_Limpio.xlsx   # dataset limpio (déjalo en la raíz)
+├─ src/
+│  ├─ C_Principal.py
+│  ├─ codigo_principal.py
+│  └─ Funciones.py
+└─ docs/
+   └─ img/
+      └─ inventario/                  # opcional: si guardas PNG de EOQ/SS/ROP/LT
+```
+> Respeta mayúsculas/minúsculas tal como arriba. Los scripts esperan el Excel en la **raíz**.
+
+---
+
+## Cómo ejecutar (sin tocar el código)
+### Opción A — Flujo completo
+```bash
+python src/codigo_principal.py
+python src/C_Principal.py
+```
+### Opción B — Solo análisis/gráficos/modelos
+```bash
+python src/C_Principal.py
+```
+Los scripts:
+- Cargan **Base_Empresa_BigData_Limpio.xlsx**.
+- Construyen agregados por **día, semana y mes**.
+- Ejecutan las **funciones de `Funciones.py`** para visualizaciones, correlaciones, modelos (Random Forest) y cálculos de inventario (Q*, SS, ROP y Lead Time).  
+- Imprimen métricas por consola y muestran/guardan gráficos según tu configuración.
+
+> Visualización: usa **VS Code** o Jupyter; Matplotlib abrirá las figuras en pantalla. Si el script guarda archivos, aparecerán en `docs/img/` (y `docs/img/inventario/`).
+
+---
+
 ## Limpieza y Transformaciones de Datos
 - Tipificación de fechas a `datetime` y derivaciones: `Día del Año`, `Semana del Año`, `Día_Semana`, `Fin_de_Semana`.  
 - Normalización de categorías y **método de pago**.  
@@ -72,8 +117,8 @@ El comportamiento de la demanda en retail está guiado por **estacionalidad**, e
    **Insight:** días específicos explican gran parte del ingreso; gatillos para buffers logísticos.
 
 ### Mix y pagos
-7. **Promedio por categoría (2024)**  
-   ![Promedio por categoría](<docs/img/Promedio por Categoría Año 2024-2024(barras).png>)  
+7. **Promedio por categoría (2023–2024)**  
+   ![Promedio por categoría](<docs/img/Promedio por Categoría Año 2023-2024(barras).png>)  
    **Insight:** **Hogar/Oficina** lideran; **Electrónica/Juguetería** rezagadas.  
 8. **Promedios por método de pago (2023–2024)**  
    ![Promedio por pago](<docs/img/Promedio por metodo de pago año 2023-2024.png>)  
@@ -118,7 +163,7 @@ El comportamiento de la demanda en retail está guiado por **estacionalidad**, e
 21. **Por categoría — Base (2025)**  
     ![Base 2025](<docs/img/Ingreso Real vs Predicho(Base) por categoría 2025.png>)  
 22. **Por categoría — (Mensual) Enriquecido 2025**  
-    ![Mensual 2025 enr.](<docs/img/Ingerso Real vs Predicho enriquecido por Categoría (Mensual) 2025.png>)  
+    ![Mensual 2025 enr.](<docs/img/Ingerso Real vs Predicho enriquecido por Categoría (Mneusal) 2025.png>)  
 23. **Por categoría — (Mensual) Real vs Predicha 2025**  
     ![Mensual 2025 real/pred](<docs/img/Cantidad Real vs Predicha por Categoría (Mneusal) 2025.png>)  
 
@@ -144,7 +189,7 @@ El comportamiento de la demanda en retail está guiado por **estacionalidad**, e
 ---
 
 ## ¿Cómo ver Q*, Stock de Seguridad (SS), ROP y Lead Times?
-- **Se visualizan en VS Code/Jupyter** ejecutando `codigo_principal.py` o `C_Principal.py`.  
+- **Se visualizan en VS Code/Jupyter** ejecutando `python src/codigo_principal.py` o `python src/C_Principal.py`.  
 - Si tus funciones guardan archivos, usa estas carpetas sugeridas (puedes crearlas):  
   - PNG **inventario** → `docs/img/inventario/`  
   - CSV **inventario** → `outputs/inventario/`
@@ -259,7 +304,7 @@ El comportamiento de la demanda en retail está guiado por **estacionalidad**, e
 - **Regla:** *challenger* reemplaza si mejora WAPE ≥ **1.5 p.p.** sin empeorar Bias ni cobertura.
 
 ### 10) Gobernanza y checklists
-- **Paquete mensual:** pronósticos P50/P90, métricas por fold, tablas Q*/ROP/SS, KPIs, LT, acta S&OP.  
+- **Paquete mensual:** pronósticos P50/P90, métrricas por fold, tablas Q*/ROP/SS, KPIs, LT, acta S&OP.  
 - **Checklist antes de publicar:** data freeze ✓, backtesting ✓, KPIs ✓, Q*/ROP/SS ✓, LT vs SLA ✓, acta ✓.
 
 ---
@@ -278,7 +323,7 @@ Python 3.x · pandas · numpy · matplotlib · seaborn · scikit-learn · openpy
 ---
 
 ## Diseño del Código y Automatización Inteligente
-Arquitectura modular: `codigo_principal.py` orquesta funciones de `Funciones.py`.  
+Arquitectura modular: `src/codigo_principal.py` orquesta funciones de `src/Funciones.py`.  
 1_ Reutilización de funciones para EDA/modelado/gráficos.  
 2_ Ejecución rápida por parámetros (columnas, años, filtros).  
 3_ Automatización del flujo EDA → modelo → reportes.  
@@ -290,6 +335,16 @@ Arquitectura modular: `codigo_principal.py` orquesta funciones de `Funciones.py`
 ## Ejecución del Proyecto
 ```bash
 # Ejecutar flujo principal (VS Code / terminal)
-python codigo_principal.py
+python src/codigo_principal.py
 # (o)
-python C_Principal.py
+python src/C_Principal.py
+```
+> Asegura que `Base_Empresa_BigData_Limpio.xlsx` esté en la **raíz** del repo.
+
+---
+
+## Contacto
+Proyecto para portafolio profesional en ciencia de datos aplicada a retail.  
+- 📬 lorenzoschiappacase@gmail.com  
+- 📎 https://www.linkedin.com/in/lorenzo-brunod-schiappacase-9a10191b9
+
