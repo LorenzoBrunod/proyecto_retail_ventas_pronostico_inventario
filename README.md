@@ -31,14 +31,19 @@ pip install pandas numpy matplotlib seaborn scikit-learn scipy openpyxl
 ```
 .
 ├─ README.md
-├─ Base_Empresa_BigData_Limpio.xlsx   # dataset limpio (déjalo en la raíz)
-├─ src/
-│  ├─ C_Principal.py
-│  ├─ codigo_principal.py
-│  └─ Funciones.py
-└─ docs/
-   └─ img/
-      └─ inventario/                  # opcional: si guardas PNG de EOQ/SS/ROP/LT
+├─ data/
+│ ├─ raw/
+│ │ └─ Base_de_datos_sin_tratar.xlsx 
+│ └─ clean/
+│ └─ Base_Empresa_BigData_Limpio.xlsx 
+├─ docs/
+│ └─ img/ 
+└─ src/
+├─ codigo_principal.py # Pre-proceso común (limpieza + EDA)
+├─ C_Principal.py # PyCharm → visualizaciones post-EDA
+├─ Funciones.py # PyCharm → funciones de modelado/gráficos
+├─ Funcioness.py # VS Code → funciones (versión para VS Code)
+└─ Código_Principal.ipynb # VS Code → notebook de visualización
 ```
 > Respeta mayúsculas/minúsculas tal como arriba. Los scripts esperan el Excel en la **raíz**.
 
